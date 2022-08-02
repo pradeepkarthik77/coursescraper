@@ -34098,6 +34098,6 @@
     "nbPages": 5,
     "page": 1,
     "params": "x-algolia-application-id=LUA9B20G37&x-algolia-api-key=dcc55281ffd7ba6f24c3a9b18288499b&hitsPerPage=1000&page=1&filters=isCurrentlyLaunched%3Atrue",
-    "processingTimeMS": 192,
+    "processingTimeMS": 137,
     "query": ""
 }
