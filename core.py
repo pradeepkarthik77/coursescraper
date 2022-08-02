@@ -9,7 +9,7 @@ requirement = input("Enter the name of the course you need to take: ").split()
 
 searchaddon = "%20".join(requirement)
 
-urlbase = urlbase+searchaddon+"&="
+urlbase = urlbase+str(searchaddon)+"&="
 
 print(urlbase)
 
@@ -23,27 +23,17 @@ while page_iter_count <= 12:
     print(pageiter,page_iter_count,newurlbase)
     page_iter_count+=1
 
-    urlgetrequest = requests.get(newurlbase).text
+    html_text = requests.get(newurlbase).text
 
-    #sleep(100)
+    soup = BeautifulSoup(html_text,"lxml")
 
-    soup = BeautifulSoup(urlgetrequest,"lxml")
+    print(soup.prettify())
 
-    #print(soup.select("div.rc-SearchTabs"))
+    break
 
-    #break
+    #answer = soup.find_all("div",class_="css-1j8ushu")
 
-    #print(type(soup.prettify()))
-
-    courseslist = soup.find('div',class_='rendered-content')#,class_="cds-63 css-0 cds-65 cds-grid-item cds-110 cds-118 cds-130")
-
-    print(courseslist)
-
-    #page_iter_count = len(courseslist)
-
-    #print("pagecount",page_iter_count)
-
-    #print(pageiter,newurlbase)
+    #print(len(answer))
 
     pageiter+=1
 
